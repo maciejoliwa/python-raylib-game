@@ -1,5 +1,6 @@
 import typing
 from pyray import *
+from components import PlayerComponent
 
 def main() -> typing.NoReturn:
 
@@ -10,12 +11,19 @@ def main() -> typing.NoReturn:
     init_window(monitor_width, monitor_height, "Epic Cube")
     set_target_fps(60)
     
+    player = PlayerComponent(100, 100)
+
     while not window_should_close():
-        
+        player.update()
+
         # DRAWING
         begin_drawing()
         clear_background(RAYWHITE)
         draw_text("EPIC CUBE", 200, 200, 69, RED)
+        
+        # Render components
+        player.render()
+        
         end_drawing()
 
     close_window()
