@@ -6,7 +6,7 @@ class PlayerComponent(GameComponent):
 
     _x: int
     _y: int
-    _speed = 200
+    _speed = 250
     _damage = 5
 
     def __init__(self, init_x: int, init_y: int) -> None:
@@ -29,5 +29,5 @@ class PlayerComponent(GameComponent):
             self._y -= int(self._speed * delta)
 
     def render(self) -> typing.NoReturn:
-        draw_rectangle(self._x, self._y, 64, 64, GREEN)
+        draw_rectangle(self._x, self._y, 96, 96, GREEN)
         
