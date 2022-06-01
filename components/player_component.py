@@ -2,11 +2,12 @@ import typing
 from .game_component import GameComponent
 from pyray import *
 
+
 class PlayerComponent(GameComponent):
 
     _x: int
     _y: int
-    _speed = 250
+    _speed = 550
     _damage = 5
 
     def __init__(self, init_x: int, init_y: int) -> None:
